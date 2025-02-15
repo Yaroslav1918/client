@@ -1,27 +1,23 @@
-import { Member } from '../../../_models/member';
-import { MembersService } from './../../_services/members.service';
-import { Component, inject, OnInit } from '@angular/core';
+import { Member } from "../../../_models/member";
+import { MembersService } from "./../../_services/members.service";
+import { Component, inject, OnInit } from "@angular/core";
 import { MemberCardComponent } from "../member-card/member-card.component";
 
 @Component({
-  selector: 'app-member-list',
+  selector: "app-member-list",
   standalone: true,
   imports: [MemberCardComponent],
-  templateUrl: './member-list.component.html',
-  styleUrl: './member-list.component.css'
+  templateUrl: "./member-list.component.html",
+  styleUrl: "./member-list.component.css",
 })
 export class MemberListComponent implements OnInit {
-  private MembersService = inject(MembersService);
-  members: Member[] = [];
+  membersService = inject(MembersService);
 
   ngOnInit(): void {
-    this.loadMembers();
+    if (this.membersService.members().length === 0) this.loadMembers();
   }
 
   loadMembers() {
-    this.MembersService.getMembers().subscribe({
-      next: members => this.members = members
-    })
+    this.membersService.getMembers();
   }
-
 }
