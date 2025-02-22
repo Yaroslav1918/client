@@ -45,10 +45,14 @@
   },
   "overrides": {
     "ngx-bootstrap": {
+      "@angular/common": "@angular/common",
+      "@angular/core": "@angular/core",
+      "@angular/animations": "@angular/animations",
+      "@angular/forms": "@angular/forms"
+    },
+    "ng2-file-upload": {
       "@angular/common": "$@angular/common",
-      "@angular/core": "$@angular/core",
-      "@angular/animations": "$@angular/animations",
-      "@angular/forms": "$@angular/forms"
+      "@angular/core": "$@angular/core"
     }
   }
 }
