@@ -11,7 +11,6 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.2.0",
-    "@angular/cdk": "^19.1.4",
     "@angular/common": "^18.2.0",
     "@angular/compiler": "^18.2.0",
     "@angular/core": "^18.2.0",
@@ -23,7 +22,7 @@
     "bootswatch": "^5.3.3",
     "font-awesome": "^4.7.0",
     "ng-gallery": "^12.0.0",
-    "ngx-bootstrap": "^12.0.0",
+    "ng2-file-upload": "^8.0.0",
     "ngx-spinner": "^17.0.0",
     "ngx-toastr": "^19.0.0",
     "rxjs": "~7.8.0",
