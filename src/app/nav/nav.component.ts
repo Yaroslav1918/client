@@ -8,12 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: "app-nav",
   standalone: true,
-  imports: [
-    FormsModule,
-    BsDropdownModule,
-    RouterLink,
-    RouterLinkActive,
-  ],
+  imports: [FormsModule, BsDropdownModule, RouterLink, RouterLinkActive],
   templateUrl: "./nav.component.html",
   styleUrl: "./nav.component.css",
 })

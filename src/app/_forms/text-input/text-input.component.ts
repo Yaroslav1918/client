@@ -14,15 +14,14 @@ export class TextInputComponent implements ControlValueAccessor {
   type = input<string>("text");
 
   constructor(@Self() public ngControl: NgControl) {
-    this.ngControl.valueAccessor = this
+    this.ngControl.valueAccessor = this;
   }
-
 
   writeValue(obj: any): void {}
   registerOnChange(fn: any): void {}
   registerOnTouched(fn: any): void {}
-  setDisabledState?(isDisabled: boolean): void { }
-  
+  setDisabledState?(isDisabled: boolean): void {}
+
   get control(): FormControl {
     return this.ngControl.control as FormControl;
   }

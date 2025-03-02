@@ -15,11 +15,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: "app-register",
   standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    TextInputComponent,
-    DatePickerComponent,
-  ],
+  imports: [ReactiveFormsModule, TextInputComponent, DatePickerComponent],
   templateUrl: "./register.component.html",
   styleUrl: "./register.component.css",
 })
@@ -61,11 +57,11 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    const dob = this.getDateOnly(this.registerForm.get('dateOfBirth')?.value);
+    const dob = this.getDateOnly(this.registerForm.get("dateOfBirth")?.value);
     this.registerForm.patchValue({ dateOfBirth: dob });
     this.accoutService.register(this.registerForm.value).subscribe({
       next: (res) => this.router.navigateByUrl("/members"),
-      error: (error) => this.validationErrors = error
+      error: (error) => (this.validationErrors = error),
     });
   }
 
