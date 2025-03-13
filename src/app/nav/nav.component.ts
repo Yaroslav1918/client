@@ -1,5 +1,5 @@
 import { AccountService } from './../_services/account.service';
-import { Component, inject, OnInit } from "@angular/core";
+import { Component, inject} from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
@@ -13,14 +13,12 @@ import { HasRoleDirective } from '../_directives/has-role.directive';
   templateUrl: "./nav.component.html",
   styleUrl: "./nav.component.css",
 })
-export class NavComponent implements OnInit {
+export class NavComponent{
   accountService = inject(AccountService);
   private router = inject(Router);
   private toastr = inject(ToastrService);
   model: any = {};
-  ngOnInit(): void {
-    console.log("../../assets/user.png");
-  }
+  
   login() {
     this.accountService.login(this.model).subscribe({
       next: (_) => {

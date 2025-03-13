@@ -31,7 +31,7 @@ export class MessageService {
       .withAutomaticReconnect()
       .build();
     this.hubConnection.start().catch((error) => console.log(error));
-    this.hubConnection.on("ReceiveMessageThread", (messages) => {
+    this.hubConnection.on("ReceivedMessageThread", (messages) => {
       this.messageThread.set(messages);
     });
     this.hubConnection.on("NewMessage", (message) => {

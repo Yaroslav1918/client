@@ -20,6 +20,10 @@ export class ListsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadLikes();
+    console.log(
+      "likesService.paginatedResult()?.pagination",
+      this.likesService.paginatedResult()?.pagination
+    );
   }
 
   getTitle() {

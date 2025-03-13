@@ -38,7 +38,7 @@
   </div>
   }
 </div>
-@if (likesService.paginatedResult()?.pagination) {
+@if (likesService.paginatedResult()?.pagination?.totalItems) {
 <div class="d-flex justify-content-center">
   <pagination
     [boundaryLinks]="true"

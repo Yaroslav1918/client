@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
   private fb = inject(FormBuilder);
   cancelRegister = output<boolean>();
   maxDate = new Date();
-  validationErrors: string[] | undefined;
+  validationErrors: any[] | undefined;
 
   ngOnInit(): void {
     this.initializeForm();
@@ -61,7 +61,9 @@ export class RegisterComponent implements OnInit {
     this.registerForm.patchValue({ dateOfBirth: dob });
     this.accoutService.register(this.registerForm.value).subscribe({
       next: (res) => this.router.navigateByUrl("/members"),
-      error: (error) => (this.validationErrors = error),
+      error: (error) => {
+        return (this.validationErrors = error);
+      }
     });
   }
 
